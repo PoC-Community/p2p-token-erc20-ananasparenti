@@ -13,9 +13,9 @@ contract ERC20 is IERC20 {
     mapping(address => uint256) private _balances;
     mapping(address => mapping(address => uint256)) private _allowances;
 
-    constructor(string memory name_, string memory symbol_, uint256 initialSupply) {
-        name = name_;
-        symbol = symbol_;
+    constructor(uint256 initialSupply) {
+        name = "AnanasCoin";
+        symbol = "ANANAS";
         _totalSupply = initialSupply * 10 ** uint256(decimals);
         _balances[msg.sender] = _totalSupply;
         emit Transfer(address(0), msg.sender, _totalSupply);
